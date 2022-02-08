@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "closeup-photo-amazing-short-hairdo-260nw-1617540484.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "closeup-photo-amazing-short-hairdo-260nw-1617540484@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "closeup-photo-amazing-short-hairdo-260nw-1617540484@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
