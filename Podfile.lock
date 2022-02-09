@@ -1,0 +1,78 @@
+PODS:
+  - Alamofire (5.4.3)
+  - Crashlytics (3.14.0):
+    - Fabric (~> 1.10.2)
+  - Fabric (1.10.2)
+  - Moya (14.0.0):
+    - Moya/Core (= 14.0.0)
+  - Moya/Core (14.0.0):
+    - Alamofire (~> 5.0)
+  - PromiseKit (6.15.3):
+    - PromiseKit/CorePromise (= 6.15.3)
+    - PromiseKit/Foundation (= 6.15.3)
+    - PromiseKit/UIKit (= 6.15.3)
+  - PromiseKit/CorePromise (6.15.3)
+  - PromiseKit/Foundation (6.15.3):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.15.3):
+    - PromiseKit/CorePromise
+  - RappleProgressHUD (4.1)
+  - Realm (10.12.0):
+    - Realm/Headers (= 10.12.0)
+  - Realm/Headers (10.12.0)
+  - RealmSwift (10.12.0):
+    - Realm (= 10.12.0)
+  - RxCocoa (5.1.3):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.1.3):
+    - RxSwift (~> 5)
+  - RxSwift (5.1.2)
+  - SwiftyBeaver (1.9.5)
+  - SwiftyJSON (5.0.1)
+
+DEPENDENCIES:
+  - Crashlytics
+  - Moya (= 14.0.0)
+  - PromiseKit
+  - RappleProgressHUD
+  - RealmSwift
+  - RxCocoa (~> 5.1.0)
+  - RxSwift (~> 5.1.1)
+  - SwiftyBeaver
+  - SwiftyJSON
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Crashlytics
+    - Fabric
+    - Moya
+    - PromiseKit
+    - RappleProgressHUD
+    - Realm
+    - RealmSwift
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+    - SwiftyBeaver
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  Crashlytics: 9220f5bc89e7a618df411b4f639389dbfb0e03d2
+  Fabric: ea977e3cd9c20425516d3dafd3bf8c941c51223f
+  Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  PromiseKit: 3b2b6995e51a954c46dbc550ce3da44fbfb563c5
+  RappleProgressHUD: f29bc5dc5f9834c2caa9c2ae21ba11f3ff2b5a85
+  Realm: 32488213acb44660539c619d620cec1bac046166
+  RealmSwift: 0abdca6231d5ff8a4f84cef9c1121ef95a483faf
+  RxCocoa: e2ed092d5432e4296aa818021d27de4090ac0354
+  RxRelay: 5a18c2eb2d68326ebaf0112f80d837ae41b92b97
+  RxSwift: 1e2e1f9570186967f617e49128ed26ccf1bafc8e
+  SwiftyBeaver: 84069991dd5dca07d7069100985badaca7f0ce82
+  SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
+
+PODFILE CHECKSUM: e88ca160392429a0f26309b928c726fa922389de
+
+COCOAPODS: 1.11.2
