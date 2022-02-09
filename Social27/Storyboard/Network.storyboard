@@ -102,8 +102,9 @@
                                                     <constraint firstItem="bwX-YW-epc" firstAttribute="centerY" secondItem="EIa-bY-v0R" secondAttribute="centerY" id="cq1-6N-d4E"/>
                                                 </constraints>
                                             </view>
-                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="iAQ-YL-XCY">
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="iAQ-YL-XCY">
                                                 <rect key="frame" x="20" y="80" width="374" height="45"/>
+                                                <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="aSf-2d-Nkj"/>
                                                 </constraints>

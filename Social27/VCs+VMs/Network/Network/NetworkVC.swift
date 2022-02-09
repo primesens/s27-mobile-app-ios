@@ -65,9 +65,15 @@ class NetworkVC: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
         
+        let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        let titleTextAttributesUnselect = [NSAttributedString.Key.foregroundColor: UIColor.black]
+        btnSegementedControl.setTitleTextAttributes(titleTextAttributesUnselect, for: .normal)
+        btnSegementedControl.setTitleTextAttributes(titleTextAttributes, for: .selected)
+        
+        let font = UIFont.systemFont(ofSize: 14, weight: .light)          // Compute the right size
+        btnSegementedControl.setTitleTextAttributes([NSAttributedString.Key.font: font], for: .normal)
         
         self.helloWorldTableViewHeight.constant = CGFloat(380 * self.vm.arrHelloWroldSpeakers.count)
-        
         self.attendeeCollectionViewHeight.constant = CGFloat(100 * self.vm.arrNetworks.count)
     }
     
