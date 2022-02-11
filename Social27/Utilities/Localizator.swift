@@ -35,7 +35,7 @@ extension String {
     static let PollVC = NSLocalizedString("PollVC", comment: "")
     static let CreateNewMeetingVC = NSLocalizedString("CreateNewMeetingVC", comment: "")
     static let SpeakerStoryVC = NSLocalizedString("SpeakerStoryVC", comment: "")
-    
+    static let EditProfileVC = NSLocalizedString("EditProfileVC", comment: "")
     
     static let ChatVC = NSLocalizedString("ChatVC", comment: "")
     static let MainVC = NSLocalizedString("MainVC", comment: "")

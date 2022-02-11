@@ -61,7 +61,6 @@ class ProfileVC: BaseVC {
     }
     
     // MARK: - Config UI
-    
     func configUI() {
         profileVideoView.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 30)
         moreBtnView.addCornerRadius(radius: 4)
@@ -87,7 +86,9 @@ class ProfileVC: BaseVC {
         self.present(alert, animated: true, completion: nil)
     }
     
-    
+    @IBAction func didTapOnEditProfile(_ sender: UIButton) {
+//        ApplicationServiceProvider.shared.pushToViewController(in: .More, for: .EditProfileVC, from: self)
+    }
     // MARK: - Logout
     
     fileprivate func logout() {

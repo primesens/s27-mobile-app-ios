@@ -18,6 +18,7 @@ enum Storyboard: String {
     case Events
     case Authentication
     case Utilities
+    case More
     case Tabbar
 }
 
@@ -128,6 +129,13 @@ class ApplicationServiceProvider {
         let destVc = storyboard.instantiateViewController(withIdentifier: identifier)
         vc?.navigationController?.pushViewController(destVc, animated: true)
     }
+//    
+//    public func pushToViewControllerFromCell(in sb: Storyboard, for identifier: String, from vc: Any? = nil, data: Any? = nil) {
+//
+//        let storyboard = UIStoryboard(name: sb.rawValue, bundle: nil)
+//        let destVc = storyboard.instantiateViewController(withIdentifier: identifier)
+//        vc?.navigationController?.pushViewController(destVc, animated: true)
+//    }
     
     // Get View Controller
     public func viewController(in sb: Storyboard, identifier: String) -> UIViewController {

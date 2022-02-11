@@ -10,12 +10,15 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-class EventDetailVC: UIViewController {
+class EventDetailVC: UIViewController, AgendaTVCDelegate {
     
     // MARK: - Variables
     
     private let bag = DisposeBag()
     let vm = EventDetailVM()
+    
+    
+  
     
     // MARK: - Outlets
     
@@ -89,7 +92,7 @@ class EventDetailVC: UIViewController {
     @IBOutlet weak var roundtablesStackView: UIStackView!
     
     
-    
+
     
     @IBOutlet weak var eventOptionCollectionView: UICollectionView! {
         didSet {
@@ -194,19 +197,13 @@ class EventDetailVC: UIViewController {
         roundtablesStackView.isHidden = true
         
         self.sponsorsCollectionViewHeight.constant = CGFloat(33 * self.vm.arrEventSponsors.count)
-        
-        self.speakersTableViewHeight.constant = CGFloat(75 * self.vm.arrEventSpeakers.count + 2)
-        
-        self.networkingTableViewHeight.constant = CGFloat(130 * self.vm.arrEventNetworking.count + 2)
-        
-        self.agendaTableviewHeight.constant = CGFloat(130 * self.vm.arrEventAgenda.count + 2)
-        
+        self.speakersTableViewHeight.constant = CGFloat(90 * self.vm.arrEventSpeakers.count + 2)
+        self.networkingTableViewHeight.constant = CGFloat(150 * self.vm.arrEventNetworking.count + 2)
+        self.agendaTableviewHeight.constant = CGFloat(150 * self.vm.arrEventAgenda.count + 2)
         self.myAgendaTableviewHeight.constant = CGFloat(140 * self.vm.arrEventMyAgenda.count + 2)
-        
         self.roundTablesOneOnOneTableViewHeight.constant = CGFloat(500 * self.vm.arrEventOneOnOneRoundTable.count)
         self.roundTablesRTTableViewHeight.constant = CGFloat(500 * self.vm.arrEventRTRoundTable.count)
         self.roundTablesBoardroomTableViewHeight.constant = CGFloat(600 * self.vm.arrEventBoardroomRoundTable.count)
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -468,6 +465,9 @@ extension EventDetailVC: UITableViewDelegate, UITableViewDataSource {
         } else if (tableView == AgendaTableView) {
             let cell = AgendaTableView.dequeueReusableCell(withIdentifier: "AgendaTVC", for: indexPath) as! AgendaTVC
             cell.configCell(model: vm.arrEventAgenda[indexPath.row])
+            cell.delegate = self
+            cell.btnStartSession.tag = indexPath.row
+            cell.btnInfo.tag = indexPath.row
             return cell
         } else if (tableView == myAgendaTableView) {
             let cell = myAgendaTableView.dequeueReusableCell(withIdentifier: "MyAgendaTVC", for: indexPath) as! MyAgendaTVC
@@ -489,6 +489,13 @@ extension EventDetailVC: UITableViewDelegate, UITableViewDataSource {
         return UITableViewCell()
     }
     
+    func btnStartSession(_ tag: Int) {
+        ApplicationServiceProvider.shared.pushToViewController(in: .Events, for: .LiveChatVC, from: self)
+    }
+    
+    func btnInfo(_ tag: Int) {
+        EventInfo.instance.showEventInfoview(from: self)
+    }
     
 }
 

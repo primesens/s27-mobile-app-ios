@@ -8,8 +8,18 @@
 
 import UIKit
 
-class AgendaTVC: UITableViewCell {
+protocol AgendaTVCDelegate {
+    func btnStartSession(_ tag: Int)
+    func btnInfo(_ tag: Int)
+}
 
+class AgendaTVC: UITableViewCell {
+    
+    // MARK: - Variables
+    
+    static let instance = AgendaTVC()
+    var delegate: AgendaTVCDelegate?
+    
     // MARK: - Outlets
     
     @IBOutlet weak var bgView           : UIView!
@@ -44,5 +54,17 @@ class AgendaTVC: UITableViewCell {
         btnViewTwo.layer.cornerRadius = btnViewTwo.frame.size.width/2
         btnViewThree.layer.cornerRadius = btnViewThree.frame.size.width/2
     }
+    
+    
+    @IBAction func didTapOnBtnStartSession(_ sender: UIButton) {
+        delegate?.btnStartSession(sender.tag)
+        print("StartSession")
 
+    }
+    
+    @IBAction func didTapOnBtnViewInfo(_ sender: UIButton) {
+        
+        delegate?.btnInfo(sender.tag)
+        print("ViewInfo")
+    }
 }

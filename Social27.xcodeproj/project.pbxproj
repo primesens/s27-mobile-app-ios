@@ -137,8 +137,10 @@
 		A9A729D427B271A80056FB49 /* NetworlHelloWorldTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A729D327B271A80056FB49 /* NetworlHelloWorldTVC.swift */; };
 		A9ACCBBD279FD48500ACC0CD /* ProfileStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9ACCBBC279FD48500ACC0CD /* ProfileStore.swift */; };
 		A9ACCBBF27A050CF00ACC0CD /* String+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9ACCBBE27A050CF00ACC0CD /* String+Extention.swift */; };
-		A9CF79F827677E3300EFCE45 /* EventDetail2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CF79F727677E3300EFCE45 /* EventDetail2VC.swift */; };
-		A9CF79FA27677E4100EFCE45 /* EventDetail2VM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CF79F927677E4100EFCE45 /* EventDetail2VM.swift */; };
+		A9B2E81827B62D0200F98D0F /* EventInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B2E81627B62D0200F98D0F /* EventInfo.swift */; };
+		A9B2E81927B62D0200F98D0F /* EventInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9B2E81727B62D0200F98D0F /* EventInfo.xib */; };
+		A9B2E81C27B6B56200F98D0F /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B2E81B27B6B56200F98D0F /* EditProfileVC.swift */; };
+		A9B2E81E27B6B57500F98D0F /* EditProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B2E81D27B6B57500F98D0F /* EditProfileVM.swift */; };
 		A9D814C22757CEA300DA2B94 /* GetStartedVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D814C12757CEA300DA2B94 /* GetStartedVM.swift */; };
 		A9D814C42757CEBD00DA2B94 /* GetStartedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D814C32757CEBD00DA2B94 /* GetStartedVC.swift */; };
 		A9D814C82757CEF500DA2B94 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D814C72757CEF500DA2B94 /* SignInVC.swift */; };
@@ -319,8 +321,10 @@
 		A9A729D327B271A80056FB49 /* NetworlHelloWorldTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworlHelloWorldTVC.swift; sourceTree = "<group>"; };
 		A9ACCBBC279FD48500ACC0CD /* ProfileStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStore.swift; sourceTree = "<group>"; };
 		A9ACCBBE27A050CF00ACC0CD /* String+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extention.swift"; sourceTree = "<group>"; };
-		A9CF79F727677E3300EFCE45 /* EventDetail2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetail2VC.swift; sourceTree = "<group>"; };
-		A9CF79F927677E4100EFCE45 /* EventDetail2VM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetail2VM.swift; sourceTree = "<group>"; };
+		A9B2E81627B62D0200F98D0F /* EventInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInfo.swift; sourceTree = "<group>"; };
+		A9B2E81727B62D0200F98D0F /* EventInfo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventInfo.xib; sourceTree = "<group>"; };
+		A9B2E81B27B6B56200F98D0F /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
+		A9B2E81D27B6B57500F98D0F /* EditProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVM.swift; sourceTree = "<group>"; };
 		A9D814C12757CEA300DA2B94 /* GetStartedVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedVM.swift; sourceTree = "<group>"; };
 		A9D814C32757CEBD00DA2B94 /* GetStartedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedVC.swift; sourceTree = "<group>"; };
 		A9D814C72757CEF500DA2B94 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -912,6 +916,7 @@
 		A99B0125275F138000812314 /* More */ = {
 			isa = PBXGroup;
 			children = (
+				A9B2E81A27B6B52E00F98D0F /* EditProfile */,
 				A99B0126275F138800812314 /* Profile */,
 			);
 			path = More;
@@ -929,10 +934,10 @@
 		A99B012B275F229200812314 /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				A9B2E81527B62CD400F98D0F /* EventInfo */,
 				A929B0AF277C628F0015935A /* CreateNewMeeting */,
 				A9825A902770874A00267ADE /* LiveEvent */,
 				A905F5992769E91A0069EB48 /* Register */,
-				A9CF79F627677E0600EFCE45 /* EventDetail 2 */,
 				A99B012C275F229E00812314 /* EventsHome */,
 				A965A09027630AB1001E4C66 /* EventDetail */,
 				A99ACFAD277D913C00CF8D0C /* EventSurvey */,
@@ -951,13 +956,22 @@
 			path = EventsHome;
 			sourceTree = "<group>";
 		};
-		A9CF79F627677E0600EFCE45 /* EventDetail 2 */ = {
+		A9B2E81527B62CD400F98D0F /* EventInfo */ = {
 			isa = PBXGroup;
 			children = (
-				A9CF79F727677E3300EFCE45 /* EventDetail2VC.swift */,
-				A9CF79F927677E4100EFCE45 /* EventDetail2VM.swift */,
+				A9B2E81727B62D0200F98D0F /* EventInfo.xib */,
+				A9B2E81627B62D0200F98D0F /* EventInfo.swift */,
 			);
-			path = "EventDetail 2";
+			path = EventInfo;
+			sourceTree = "<group>";
+		};
+		A9B2E81A27B6B52E00F98D0F /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				A9B2E81B27B6B56200F98D0F /* EditProfileVC.swift */,
+				A9B2E81D27B6B57500F98D0F /* EditProfileVM.swift */,
+			);
+			path = EditProfile;
 			sourceTree = "<group>";
 		};
 		A9D814C02757CE7D00DA2B94 /* LandingScreen */ = {
@@ -1118,6 +1132,7 @@
 				A911AAD4275E4247004B5E2A /* Poppins-BlackItalic.ttf in Resources */,
 				A911AAD0275E4247004B5E2A /* Poppins-Medium.ttf in Resources */,
 				A99ACFB6277DA4D800CF8D0C /* SurveySuccess.xib in Resources */,
+				A9B2E81927B62D0200F98D0F /* EventInfo.xib in Resources */,
 				A99ACFB1277D916600CF8D0C /* EventSurvey.xib in Resources */,
 				A911AACB275E4247004B5E2A /* Poppins-ExtraLight.ttf in Resources */,
 				A911AAD9275E4247004B5E2A /* Poppins-Thin.ttf in Resources */,
@@ -1277,13 +1292,13 @@
 				A95BD9AB278C0264006AB443 /* BaseVM.swift in Sources */,
 				A9ACCBBF27A050CF00ACC0CD /* String+Extention.swift in Sources */,
 				A962F58F2782C728004EBD1E /* TTabBarViewController.swift in Sources */,
+				A9B2E81E27B6B57500F98D0F /* EditProfileVM.swift in Sources */,
 				A9825A932770877F00267ADE /* LiveChatVC.swift in Sources */,
 				A99B012E275F22B200812314 /* EvenetsVM.swift in Sources */,
 				A911AAF3275E8583004B5E2A /* NetworkVC.swift in Sources */,
 				A95BD9AF278C050F006AB443 /* NetworkRechability.swift in Sources */,
 				A9D814D027581A3900DA2B94 /* ApplicationServiceProvider.swift in Sources */,
 				A92AEF77279E99F50092761E /* SignUpResult.swift in Sources */,
-				A9CF79F827677E3300EFCE45 /* EventDetail2VC.swift in Sources */,
 				A917ADC92757894B0012B581 /* UITextField+TextField.swift in Sources */,
 				A95381FD279ABBDF00E4B039 /* Response.swift in Sources */,
 				A9ACCBBD279FD48500ACC0CD /* ProfileStore.swift in Sources */,
@@ -1304,14 +1319,15 @@
 				A9825A8F277075B900267ADE /* ScheduleMeetingVC.swift in Sources */,
 				A929B0B1277C62A50015935A /* CreateNewMeetingVC.swift in Sources */,
 				A917ADD52757937C0012B581 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
-				A9CF79FA27677E4100EFCE45 /* EventDetail2VM.swift in Sources */,
 				A99B0132275F28FD00812314 /* EventsTVC.swift in Sources */,
 				A9D814C82757CEF500DA2B94 /* SignInVC.swift in Sources */,
 				A99ACFB8277DAEDD00CF8D0C /* Handlers.swift in Sources */,
+				A9B2E81827B62D0200F98D0F /* EventInfo.swift in Sources */,
 				A91894C227668D020091109A /* NotificationsVM.swift in Sources */,
 				A911AAE5275E4A12004B5E2A /* SpeakersCVC.swift in Sources */,
 				A92AEF7B279EA0090092761E /* UIViewController+Extension.swift in Sources */,
 				A965A09227630AD4001E4C66 /* EventDetailVC.swift in Sources */,
+				A9B2E81C27B6B56200F98D0F /* EditProfileVC.swift in Sources */,
 				A911AAE3275E49EB004B5E2A /* HappeningNowCVC.swift in Sources */,
 				A9F09FF8275E2D88005E0B7A /* MainTBC.swift in Sources */,
 				A99ACFB0277D916600CF8D0C /* EventSurvey.swift in Sources */,
@@ -1542,7 +1558,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 23;
+				CURRENT_PROJECT_VERSION = 24;
 				DEVELOPMENT_TEAM = N332CSR3JC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Social27/SupportingFiles/Info.plist;
@@ -1572,7 +1588,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 23;
+				CURRENT_PROJECT_VERSION = 24;
 				DEVELOPMENT_TEAM = N332CSR3JC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Social27/SupportingFiles/Info.plist;

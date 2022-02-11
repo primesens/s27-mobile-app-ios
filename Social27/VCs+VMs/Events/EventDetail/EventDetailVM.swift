@@ -51,9 +51,11 @@ class EventDetailVM: NSObject {
         arrEventSpeakers.append(EventSpeakers(speakerImage: UIImage(named: "Ellipse 77")!, name: "Pratik Chandhoke", position: "President Of TIFF"))
         arrEventSpeakers.append(EventSpeakers(speakerImage: UIImage(named: "Ellipse 77")!, name: "Pratik Chandhoke", position: "President Of TIFF"))
         arrEventSpeakers.append(EventSpeakers(speakerImage: UIImage(named: "Ellipse 77")!, name: "Pratik Chandhoke", position: "President Of TIFF"))
+        arrEventSpeakers.append(EventSpeakers(speakerImage: UIImage(named: "Ellipse 77")!, name: "Pratik Chandhoke", position: "President Of TIFF"))
     }
     
     func getEventNetworking() {
+        arrEventNetworking.append(EventNetworking(speakerImage: UIImage(named: "Ellipse 77")!, name: "Pratik Chandhoke", position: "President Of TIFF"))
         arrEventNetworking.append(EventNetworking(speakerImage: UIImage(named: "Ellipse 77")!, name: "Pratik Chandhoke", position: "President Of TIFF"))
         arrEventNetworking.append(EventNetworking(speakerImage: UIImage(named: "Ellipse 77")!, name: "Pratik Chandhoke", position: "President Of TIFF"))
         arrEventNetworking.append(EventNetworking(speakerImage: UIImage(named: "Ellipse 77")!, name: "Pratik Chandhoke", position: "President Of TIFF"))
