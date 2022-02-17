@@ -74,8 +74,8 @@ class SignInVC: BaseVC {
     }
     
     @IBAction func didTapOnSignIn(_ sender: UIButton) {
-//        signIn()
-        ApplicationServiceProvider.shared.resetWindow(in: .Tabbar, for: .MainTBC, from: self)
+        signIn()
+//        ApplicationServiceProvider.shared.resetWindow(in: .Tabbar, for: .MainTBC, from: self)
     }
     
     @IBAction func didTapOnForgotPassword(_ sender: UIButton) {

@@ -87,7 +87,11 @@ class ProfileVC: BaseVC {
     }
     
     @IBAction func didTapOnEditProfile(_ sender: UIButton) {
-//        ApplicationServiceProvider.shared.pushToViewController(in: .More, for: .EditProfileVC, from: self)
+        ApplicationServiceProvider.shared.pushToViewController(in: .More, for: .EditProfileVC, from: self)
+    }
+    
+    @IBAction func didTapOnBtnAddInterest(_ sender: UIButton) {
+        ApplicationServiceProvider.shared.pushToViewController(in: .More, for: .AddInterestVC, from: self)
     }
     // MARK: - Logout
     

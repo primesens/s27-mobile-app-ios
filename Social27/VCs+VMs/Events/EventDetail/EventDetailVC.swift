@@ -17,9 +17,6 @@ class EventDetailVC: UIViewController, AgendaTVCDelegate {
     private let bag = DisposeBag()
     let vm = EventDetailVM()
     
-    
-  
-    
     // MARK: - Outlets
     
     @IBOutlet weak var backBtnView: UIView!
@@ -167,8 +164,7 @@ class EventDetailVC: UIViewController, AgendaTVCDelegate {
         }
     }
     
-    
-    
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -211,6 +207,8 @@ class EventDetailVC: UIViewController, AgendaTVCDelegate {
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
+    // MARK: - Configure UI
+    
     func configUI() {
         sponsorsCollectionViewHeight.constant = 0
         speakersTableViewHeight.constant = 0
@@ -220,7 +218,6 @@ class EventDetailVC: UIViewController, AgendaTVCDelegate {
         roundTablesOneOnOneTableViewHeight.constant = 0
         roundTablesBoardroomTableViewHeight.constant = 0
         roundTablesRTTableViewHeight.constant = 0
-        
         
         backBtnView.addCornerRadius(radius: 4)
         favouriteBtnView.addCornerRadius(radius: 4)
@@ -262,6 +259,8 @@ class EventDetailVC: UIViewController, AgendaTVCDelegate {
         
     }
     
+    // MARK: - Outlet Action
+    
     @IBAction func didTapOnBtnBack(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
@@ -276,6 +275,10 @@ class EventDetailVC: UIViewController, AgendaTVCDelegate {
         CreateMeetingPopUp.instance.showCreateMeetingView(from: self)
     }
 }
+
+// MARK: - Extension
+
+// MARK: - CollectionView Delegate and Datasource 
 
 extension EventDetailVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -432,6 +435,8 @@ extension EventDetailVC: UICollectionViewDelegateFlowLayout {
         return CGSize()
     }
 }
+
+// MARK: - TableView Delegate and Datasource
 
 extension EventDetailVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
