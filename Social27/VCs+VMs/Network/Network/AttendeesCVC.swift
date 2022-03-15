@@ -1,5 +1,5 @@
 //
-//  NetworkCVC.swift
+//  AttendeesCVC.swift
 //  Social27
 //
 //  Created by Gautham Sritharan on 2021-12-06.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NetworkCVC: UICollectionViewCell {
+class AttendeesCVC: UICollectionViewCell {
     
     @IBOutlet weak var viewBg: UIView!
     @IBOutlet weak var networkImageView: UIImageView!

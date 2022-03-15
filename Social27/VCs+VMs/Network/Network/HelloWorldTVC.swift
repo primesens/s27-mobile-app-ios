@@ -1,5 +1,5 @@
 //
-//  NetworlHelloWorldTVC.swift
+//  HelloWorldTVC.swift
 //  Social27
 //
 //  Created by Gautham Sritharan on 2022-02-08.
@@ -9,14 +9,13 @@
 import UIKit
 import AVFoundation
 
-class NetworlHelloWorldTVC: UITableViewCell {
+class HelloWorldTVC: UITableViewCell {
     
     // MARK: - Variables
     
     // MARK: - Outlets
     
     @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var bgview: UIView!
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var videoView: UIView!
     @IBOutlet weak var introImageView: UIImageView!

@@ -19,7 +19,10 @@ class NetworkVM: NSObject {
         arrNetworks.append(Network(bgImage: UIImage(named: "3Capture")!, name: "Paul Turzio"))
         arrNetworks.append(Network(bgImage: UIImage(named: "2Capture")!, name: "Paul Turzio"))
         arrNetworks.append(Network(bgImage: UIImage(named: "3Capture")!, name: "Paul Turzio"))
-        
+        arrNetworks.append(Network(bgImage: UIImage(named: "2Capture")!, name: "Paul Turzio"))
+        arrNetworks.append(Network(bgImage: UIImage(named: "3Capture")!, name: "Paul Turzio"))
+        arrNetworks.append(Network(bgImage: UIImage(named: "2Capture")!, name: "Paul Turzio"))
+        arrNetworks.append(Network(bgImage: UIImage(named: "3Capture")!, name: "Paul Turzio"))
     }
     
     func getHelloWorldSpeaker() {

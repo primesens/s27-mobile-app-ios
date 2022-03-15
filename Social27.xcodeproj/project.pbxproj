@@ -41,7 +41,7 @@
 		A911AAEF275E7EA2004B5E2A /* More.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A911AAEE275E7EA2004B5E2A /* More.storyboard */; };
 		A911AAF3275E8583004B5E2A /* NetworkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A911AAF2275E8583004B5E2A /* NetworkVC.swift */; };
 		A911AAF5275E8590004B5E2A /* NetworkVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A911AAF4275E8590004B5E2A /* NetworkVM.swift */; };
-		A911AAF7275E85B8004B5E2A /* NetworkCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A911AAF6275E85B8004B5E2A /* NetworkCVC.swift */; };
+		A911AAF7275E85B8004B5E2A /* AttendeesCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A911AAF6275E85B8004B5E2A /* AttendeesCVC.swift */; };
 		A917AD7027574F590012B581 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A917AD6F27574F590012B581 /* AppDelegate.swift */; };
 		A917AD7227574F590012B581 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A917AD7127574F590012B581 /* SceneDelegate.swift */; };
 		A917AD7727574F590012B581 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A917AD7527574F590012B581 /* Main.storyboard */; };
@@ -82,10 +82,7 @@
 		A94ACC2427DF106F007D1639 /* XpPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94ACC2027DF106F007D1639 /* XpPlayer.swift */; };
 		A94ACC2527DF106F007D1639 /* XpProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94ACC2127DF106F007D1639 /* XpProgress.swift */; };
 		A94ACC2727DF11C6007D1639 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94ACC2627DF11C6007D1639 /* Model.swift */; };
-		A94FD76B27DF473200A89759 /* HelloWorldTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94FD76927DF473200A89759 /* HelloWorldTVC.swift */; };
-		A94FD76C27DF473200A89759 /* HelloWorldTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A94FD76A27DF473200A89759 /* HelloWorldTVC.xib */; };
-		A94FD76F27DF781800A89759 /* VideoExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94FD76D27DF77A000A89759 /* VideoExtension.swift */; };
-		A94FD77127DFAEC900A89759 /* NewNetworkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94FD77027DFAEC900A89759 /* NewNetworkVC.swift */; };
+		A94FD77127DFAEC900A89759 /* HelloWorldVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94FD77027DFAEC900A89759 /* HelloWorldVC.swift */; };
 		A95381F1279AAA0F00E4B039 /* AuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95381F0279AAA0F00E4B039 /* AuthAPI.swift */; };
 		A95381F3279AAA5200E4B039 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95381F2279AAA5200E4B039 /* NetworkManager.swift */; };
 		A95381F5279AAA7B00E4B039 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95381F4279AAA7B00E4B039 /* Config.swift */; };
@@ -145,7 +142,7 @@
 		A9A42EAA27797C650046E0E3 /* EventNetworkingTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A42EA927797C650046E0E3 /* EventNetworkingTVC.swift */; };
 		A9A42EAC27797E8F0046E0E3 /* AgendaTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A42EAB27797E8F0046E0E3 /* AgendaTVC.swift */; };
 		A9A42EAE277984260046E0E3 /* MyAgendaTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A42EAD277984260046E0E3 /* MyAgendaTVC.swift */; };
-		A9A729D427B271A80056FB49 /* NetworlHelloWorldTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A729D327B271A80056FB49 /* NetworlHelloWorldTVC.swift */; };
+		A9A729D427B271A80056FB49 /* HelloWorldTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A729D327B271A80056FB49 /* HelloWorldTVC.swift */; };
 		A9ACCBBD279FD48500ACC0CD /* ProfileStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9ACCBBC279FD48500ACC0CD /* ProfileStore.swift */; };
 		A9ACCBBF27A050CF00ACC0CD /* String+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9ACCBBE27A050CF00ACC0CD /* String+Extention.swift */; };
 		A9B2E81827B62D0200F98D0F /* EventInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B2E81627B62D0200F98D0F /* EventInfo.swift */; };
@@ -167,6 +164,7 @@
 		A9F09FF5275E2D08005E0B7A /* Tabbar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9F09FF4275E2D08005E0B7A /* Tabbar.storyboard */; };
 		A9F09FF8275E2D88005E0B7A /* MainTBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F09FF7275E2D88005E0B7A /* MainTBC.swift */; };
 		A9F0E4F527799371001F8862 /* RoundTablesOneOnOneTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F0E4F427799371001F8862 /* RoundTablesOneOnOneTVC.swift */; };
+		A9F25B7427E08F3700E14011 /* AttendeeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F25B7327E08F3700E14011 /* AttendeeVC.swift */; };
 		AF0BC13890E43AE015D597B4 /* Pods_Social27.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B812B4DC901C8563B8177D3C /* Pods_Social27.framework */; };
 /* End PBXBuildFile section */
 
@@ -225,7 +223,7 @@
 		A911AAEE275E7EA2004B5E2A /* More.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = More.storyboard; sourceTree = "<group>"; };
 		A911AAF2275E8583004B5E2A /* NetworkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkVC.swift; sourceTree = "<group>"; };
 		A911AAF4275E8590004B5E2A /* NetworkVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkVM.swift; sourceTree = "<group>"; };
-		A911AAF6275E85B8004B5E2A /* NetworkCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCVC.swift; sourceTree = "<group>"; };
+		A911AAF6275E85B8004B5E2A /* AttendeesCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendeesCVC.swift; sourceTree = "<group>"; };
 		A917AD6C27574F590012B581 /* Social27.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Social27.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A917AD6F27574F590012B581 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A917AD7127574F590012B581 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -280,10 +278,7 @@
 		A94ACC2027DF106F007D1639 /* XpPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XpPlayer.swift; sourceTree = "<group>"; };
 		A94ACC2127DF106F007D1639 /* XpProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XpProgress.swift; sourceTree = "<group>"; };
 		A94ACC2627DF11C6007D1639 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		A94FD76927DF473200A89759 /* HelloWorldTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloWorldTVC.swift; sourceTree = "<group>"; };
-		A94FD76A27DF473200A89759 /* HelloWorldTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HelloWorldTVC.xib; sourceTree = "<group>"; };
-		A94FD76D27DF77A000A89759 /* VideoExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoExtension.swift; sourceTree = "<group>"; };
-		A94FD77027DFAEC900A89759 /* NewNetworkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNetworkVC.swift; sourceTree = "<group>"; };
+		A94FD77027DFAEC900A89759 /* HelloWorldVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloWorldVC.swift; sourceTree = "<group>"; };
 		A95381F0279AAA0F00E4B039 /* AuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAPI.swift; sourceTree = "<group>"; };
 		A95381F2279AAA5200E4B039 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		A95381F4279AAA7B00E4B039 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
@@ -342,7 +337,7 @@
 		A9A42EA927797C650046E0E3 /* EventNetworkingTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventNetworkingTVC.swift; sourceTree = "<group>"; };
 		A9A42EAB27797E8F0046E0E3 /* AgendaTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaTVC.swift; sourceTree = "<group>"; };
 		A9A42EAD277984260046E0E3 /* MyAgendaTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAgendaTVC.swift; sourceTree = "<group>"; };
-		A9A729D327B271A80056FB49 /* NetworlHelloWorldTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworlHelloWorldTVC.swift; sourceTree = "<group>"; };
+		A9A729D327B271A80056FB49 /* HelloWorldTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloWorldTVC.swift; sourceTree = "<group>"; };
 		A9ACCBBC279FD48500ACC0CD /* ProfileStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStore.swift; sourceTree = "<group>"; };
 		A9ACCBBE27A050CF00ACC0CD /* String+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extention.swift"; sourceTree = "<group>"; };
 		A9B2E81627B62D0200F98D0F /* EventInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInfo.swift; sourceTree = "<group>"; };
@@ -364,6 +359,7 @@
 		A9F09FF4275E2D08005E0B7A /* Tabbar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tabbar.storyboard; sourceTree = "<group>"; };
 		A9F09FF7275E2D88005E0B7A /* MainTBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTBC.swift; sourceTree = "<group>"; };
 		A9F0E4F427799371001F8862 /* RoundTablesOneOnOneTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundTablesOneOnOneTVC.swift; sourceTree = "<group>"; };
+		A9F25B7327E08F3700E14011 /* AttendeeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendeeVC.swift; sourceTree = "<group>"; };
 		B3A02BAAB933B3DBAA0DC0FA /* Pods-Social27-Social27UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Social27-Social27UITests.release.xcconfig"; path = "Target Support Files/Pods-Social27-Social27UITests/Pods-Social27-Social27UITests.release.xcconfig"; sourceTree = "<group>"; };
 		B812B4DC901C8563B8177D3C /* Pods_Social27.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Social27.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA63C7DD376D688F30D396DA /* Pods-Social27.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Social27.debug.xcconfig"; path = "Target Support Files/Pods-Social27/Pods-Social27.debug.xcconfig"; sourceTree = "<group>"; };
@@ -483,13 +479,13 @@
 		A911AAF1275E856A004B5E2A /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				A94FD76627DF46E400A89759 /* HelloWorldTVC */,
 				A94ACC2627DF11C6007D1639 /* Model.swift */,
 				A911AAF2275E8583004B5E2A /* NetworkVC.swift */,
 				A911AAF4275E8590004B5E2A /* NetworkVM.swift */,
-				A911AAF6275E85B8004B5E2A /* NetworkCVC.swift */,
-				A9A729D327B271A80056FB49 /* NetworlHelloWorldTVC.swift */,
-				A94FD77027DFAEC900A89759 /* NewNetworkVC.swift */,
+				A911AAF6275E85B8004B5E2A /* AttendeesCVC.swift */,
+				A9A729D327B271A80056FB49 /* HelloWorldTVC.swift */,
+				A9F25B7327E08F3700E14011 /* AttendeeVC.swift */,
+				A94FD77027DFAEC900A89759 /* HelloWorldVC.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -519,7 +515,6 @@
 		A917AD6E27574F590012B581 /* Social27 */ = {
 			isa = PBXGroup;
 			children = (
-				A94FD76D27DF77A000A89759 /* VideoExtension.swift */,
 				A917ADCA2757935E0012B581 /* Libraries */,
 				A917ADAC275785130012B581 /* Fonts */,
 				A917AD9F27574FF80012B581 /* Application */,
@@ -771,15 +766,6 @@
 				A94ACC2127DF106F007D1639 /* XpProgress.swift */,
 			);
 			path = XpPlayer;
-			sourceTree = "<group>";
-		};
-		A94FD76627DF46E400A89759 /* HelloWorldTVC */ = {
-			isa = PBXGroup;
-			children = (
-				A94FD76927DF473200A89759 /* HelloWorldTVC.swift */,
-				A94FD76A27DF473200A89759 /* HelloWorldTVC.xib */,
-			);
-			path = HelloWorldTVC;
 			sourceTree = "<group>";
 		};
 		A95381EE279AA61300E4B039 /* Network */ = {
@@ -1193,7 +1179,6 @@
 				A911AAEF275E7EA2004B5E2A /* More.storyboard in Resources */,
 				A911AADC275E4247004B5E2A /* Poppins-MediumItalic.ttf in Resources */,
 				A911AAD4275E4247004B5E2A /* Poppins-BlackItalic.ttf in Resources */,
-				A94FD76C27DF473200A89759 /* HelloWorldTVC.xib in Resources */,
 				A911AAD0275E4247004B5E2A /* Poppins-Medium.ttf in Resources */,
 				A99ACFB6277DA4D800CF8D0C /* SurveySuccess.xib in Resources */,
 				A9B2E81927B62D0200F98D0F /* EventInfo.xib in Resources */,
@@ -1352,7 +1337,7 @@
 				A985F085279729D50097B873 /* Enum.swift in Sources */,
 				A929B0AD277C39440015935A /* CreateMeetingPopUp.swift in Sources */,
 				A9D814CA2757CF0200DA2B94 /* SignInVM.swift in Sources */,
-				A9A729D427B271A80056FB49 /* NetworlHelloWorldTVC.swift in Sources */,
+				A9A729D427B271A80056FB49 /* HelloWorldTVC.swift in Sources */,
 				A95BD9AB278C0264006AB443 /* BaseVM.swift in Sources */,
 				A9ACCBBF27A050CF00ACC0CD /* String+Extention.swift in Sources */,
 				A962F58F2782C728004EBD1E /* TTabBarViewController.swift in Sources */,
@@ -1378,7 +1363,7 @@
 				A911AAF5275E8590004B5E2A /* NetworkVM.swift in Sources */,
 				A985F07D279720B40097B873 /* Validator.swift in Sources */,
 				A99ACFB5277DA4D800CF8D0C /* SurveySuccess.swift in Sources */,
-				A911AAF7275E85B8004B5E2A /* NetworkCVC.swift in Sources */,
+				A911AAF7275E85B8004B5E2A /* AttendeesCVC.swift in Sources */,
 				A9D814D62758958600DA2B94 /* LocalUser.swift in Sources */,
 				A9A42EAC27797E8F0046E0E3 /* AgendaTVC.swift in Sources */,
 				A9825A8F277075B900267ADE /* ScheduleMeetingVC.swift in Sources */,
@@ -1403,7 +1388,6 @@
 				A94ACC2527DF106F007D1639 /* XpProgress.swift in Sources */,
 				A95F159627843B3E00B74C13 /* SpeakerStoryVC.swift in Sources */,
 				A95BDA68278C10BA006AB443 /* AlertProvider.swift in Sources */,
-				A94FD76F27DF781800A89759 /* VideoExtension.swift in Sources */,
 				A9A42EA427796F910046E0E3 /* EventSponsorsCVC.swift in Sources */,
 				A917ADD72757937C0012B581 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				A95381FF279ABC6300E4B039 /* AuthTokensResult.swift in Sources */,
@@ -1430,7 +1414,7 @@
 				A9A42EAA27797C650046E0E3 /* EventNetworkingTVC.swift in Sources */,
 				A95381F1279AAA0F00E4B039 /* AuthAPI.swift in Sources */,
 				A94ACC2227DF106F007D1639 /* XpCache.swift in Sources */,
-				A94FD77127DFAEC900A89759 /* NewNetworkVC.swift in Sources */,
+				A94FD77127DFAEC900A89759 /* HelloWorldVC.swift in Sources */,
 				A917AD7227574F590012B581 /* SceneDelegate.swift in Sources */,
 				A95BD9B2278C068C006AB443 /* LoadingDelegate.swift in Sources */,
 				A91894C027668CF50091109A /* NotificationsVC.swift in Sources */,
@@ -1444,11 +1428,11 @@
 				A9DA59F427BA45F6008BC74D /* AddInterestVC.swift in Sources */,
 				A9899DD127CDEE74002BC0C5 /* VideoView.swift in Sources */,
 				A9991ED92774EB82003FB5ED /* EventOptionCVC.swift in Sources */,
-				A94FD76B27DF473200A89759 /* HelloWorldTVC.swift in Sources */,
 				A9D814C22757CEA300DA2B94 /* GetStartedVM.swift in Sources */,
 				A911AADF275E4938004B5E2A /* HomeVC.swift in Sources */,
 				A97656B7277AD79200A770BE /* CreateNewPasswordVM.swift in Sources */,
 				A95BDA6C278C252B006AB443 /* Constant.swift in Sources */,
+				A9F25B7427E08F3700E14011 /* AttendeeVC.swift in Sources */,
 				A905F59B2769E93C0069EB48 /* RegisterVC.swift in Sources */,
 				A92CD1EC27A8F29000DD4AFE /* Color+Extension.swift in Sources */,
 				A95BDA6A278C1159006AB443 /* RealmService.swift in Sources */,
@@ -1634,7 +1618,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 26;
+				CURRENT_PROJECT_VERSION = 27;
 				DEVELOPMENT_TEAM = N332CSR3JC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Social27/SupportingFiles/Info.plist;
@@ -1664,7 +1648,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 26;
+				CURRENT_PROJECT_VERSION = 27;
 				DEVELOPMENT_TEAM = N332CSR3JC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Social27/SupportingFiles/Info.plist;

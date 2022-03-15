@@ -1,5 +1,5 @@
 //
-//  NewNetworkVC.swift
+//  HelloWorldVC.swift
 //  Social27
 //
 //  Created by Gautham Sritharan on 2022-03-14.
@@ -8,8 +8,10 @@
 
 import UIKit
 
-class NewNetworkVC: UIViewController {
+class HelloWorldVC: UIViewController {
 
+    // MARK: - Outlets
+    
     @IBOutlet weak var networkTableView: UITableView!
     {
         didSet {
@@ -18,11 +20,11 @@ class NewNetworkVC: UIViewController {
         }
     }
     
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.networkTableView.register(UINib(nibName: "HelloWorldTVC", bundle: nil), forCellReuseIdentifier: "HelloWorldTVC")
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
             self?.updateByContentOffset()
             self?.startLoading()
@@ -52,8 +54,9 @@ class NewNetworkVC: UIViewController {
     }
 }
 
-//MARK:-  UITableViewDelegate, UITableViewDataSource
-extension NewNetworkVC : UITableViewDelegate, UITableViewDataSource {
+// MARK: -  UITableViewDelegate, UITableViewDataSource
+
+extension HelloWorldVC : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ModelObject.shared.demoData.count
@@ -67,14 +70,9 @@ extension NewNetworkVC : UITableViewDelegate, UITableViewDataSource {
         cell.selectionStyle = .none
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let m = min(UIScreen.main.bounds.size.width, UIScreen.main.bounds.size.height)
-        return m*0.75
-    }
 }
 
-extension NewNetworkVC {
+extension HelloWorldVC {
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         //This logic means that user is staying on the timeline screen only.
@@ -142,6 +140,5 @@ extension NewNetworkVC {
         // start loading video
         ModelObject.shared.videoPlayer?.startLoading()
     }
-    
 }
 
