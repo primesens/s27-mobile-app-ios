@@ -10,13 +10,17 @@ import UIKit
 import RxSwift
 import RxCocoa
 import AuthenticationServices
+import AVKit
 
 class ProfileVC: BaseVC {
     
     // MARK: - Variables
     
-    private let bag = DisposeBag()
-    let vm = ProfileVM()
+    private let bag     = DisposeBag()
+    let vm              = ProfileVM()
+    
+    var player          : AVPlayer?
+    var avpController   = AVPlayerViewController()
     
     // MARK: - Outlets
     
@@ -46,18 +50,24 @@ class ProfileVC: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         configUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        getCurrentVideo()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
+        
+        // Pause player
+        //        if player != nil {
+        //            player?.pause()
+        //        }
     }
     
     // MARK: - Config UI
@@ -78,12 +88,12 @@ class ProfileVC: BaseVC {
     }
     
     @IBAction func btnLogout(_ sender: UIButton) {
-        let alert = UIAlertController(title: "Logout", message: "Are you sure?", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: {action in
-            self.logout()
-        }))
-        alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+        //        let alert = UIAlertController(title: "Logout", message: "Are you sure?", preferredStyle: .alert)
+        //        alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: {action in
+        //            self.logout()
+        //        }))
+        //        alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
+        //        self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func didTapOnEditProfile(_ sender: UIButton) {
@@ -93,30 +103,56 @@ class ProfileVC: BaseVC {
     @IBAction func didTapOnBtnAddInterest(_ sender: UIButton) {
         ApplicationServiceProvider.shared.pushToViewController(in: .More, for: .AddInterestVC, from: self)
     }
-    // MARK: - Logout
     
-    fileprivate func logout() {
-//        self.startLoading()
-//        self.vm.logout() { (success) in
-//            self.stopLoading()
-//            if success {
-//                print("Logout succcess")
-//
-//
-////                let controller = SignInVC.create(viewModel: SignInViewModel(canGoBack: false))
-////                let navigation = UINavigationController(rootViewController: controller)
-////                navigation.modalPresentationStyle = .fullScreen
-//                ProfileStorage.instance.deleteProfileObjects(dataArray: [self.vm.user])
-//                DataStore.shared.removeAllData{
-                    ApplicationServiceProvider.shared.resetWindow(in: .Authentication, for: .AuthNC, from: self)
-////                    return self.present(navigation, animated: true, completion: nil)
-//                }
-//
-//            } else {
-//                print("Logout fail")
-//            }
-//        }
-        
+    func getCurrentVideo() {
+        self.playVideo()
+        //        self.startLoading()
+        //
+        //        vm.getCurrentVideoNetworkRequest { (success, statusCode, message) in
+        //            self.stopLoading()
+        //            if success {
+        //                if let _video = self.vm.currentVideo {
+        //
+        //                    if _video._id == nil {
+        //                        self.btnSpotMistakes.isUserInteractionEnabled = false
+        //                        AlertView.instance.showCustomAlert(title: .Alert, message: .NoCurrentVideo , action: CustomAlertAction(title: .Dismiss))
+        //                    } else {
+        //                         self.btnSpotMistakes.isUserInteractionEnabled = true
+        //                    }
+        //
+        //                    // Manage UI with current video and saved current video info
+        //                    self.manageActionButtonTitleWithCurrentVideoInfo()
+        //
+        //                    // Play video
+        //                    //print("**** CURRENT VIDEO ID - \(_video._id ?? 0)")
+        //                    self.playVideo(video: _video)
+        //
+        //                    self.lblPrizeAmount.text = "$\(_video.prizeAmount ?? "00")"
+        //
+        //
+        //                } else  {
+        //                    AlertView.instance.showCustomAlert(title: .Alert, message: .NoCurrentVideo , action: CustomAlertAction(title: .Dismiss))
+        //                }
+        //            } else {
+        //                AlertView.instance.showCustomAlert(title: .Alert, message: message, action: CustomAlertAction(title: .Dismiss))
+        //            }
+        //        }
     }
+    
+    // MARK: Play video
+    func playVideo() {
+        
+        if let _url = URL(string: "https://d3v42n63sui3ft.cloudfront.net/hls/10706/output.m3u8") {
+            player = AVPlayer(url: _url)
+            avpController.player = player
+            avpController.view.frame.size.height = self.profileVideoView.frame.size.height
+            avpController.view.frame.size.width = self.profileVideoView.frame.size.width
+            self.profileVideoView.addSubview(avpController.view)
+            avpController.entersFullScreenWhenPlaybackBegins = true
+            avpController.exitsFullScreenWhenPlaybackEnds = true
+            
+        }
+    }
+    
 
 }
