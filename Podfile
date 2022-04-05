@@ -20,6 +20,8 @@ target 'Social27' do
   pod 'PromiseKit'
   pod 'Moya', '14.0.0'
   
+#  pod 'MessageKit'
+#  pod 'Scaledrone', '~> 0.3.0'
   
   target 'Social27Tests' do
     inherit! :search_paths

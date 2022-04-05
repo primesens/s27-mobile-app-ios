@@ -7,15 +7,25 @@
 //
 
 import UIKit
+import AVKit
 
 class AttendiesCVC: UICollectionViewCell {
     
+    // MARK: - Variables
+    
+    var player          : AVPlayer?
+    var avpController   = AVPlayerViewController()
+    
+    // MARK: - Outlets
+    
     @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var bgView: UIView!
-    @IBOutlet weak var imageView: UIImageView!
+//    @IBOutlet weak var playerView: UIView!
+    @IBOutlet weak var playerimageView: UIImageView!
+    
+    // MARK: - LifeCycle
     
     func configCell(model: Attendies) {
-        imageView.image = model.attendiesImage
+        playerimageView.image = model.attendiesImage
     }
     
     override func layoutSubviews() {
@@ -25,4 +35,5 @@ class AttendiesCVC: UICollectionViewCell {
         
 //        viewBg.addViewShadow(offSet: 2, color: UIColor.lightGray)
     }
+    
 }

@@ -29,7 +29,7 @@ class ScheduleMeetingVC: UIViewController {
         backBtnView.addViewShadow(offSet: 1, color: .lightGray)
         backBtnView.addCornerRadius(radius: 5)
         topShadowView.addBottomShadow()
-        bottomView.addViewShadow(offSet: 0.5, color: .lightGray)
+        bottomView.addViewShadow(offSet: -5, color: .lightGray)
         btnCreateMeeting.addCornerRadius(radius: 4)
     }
     

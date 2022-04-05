@@ -314,7 +314,7 @@ extension UIView {
     func addViewShadow(offSet: CGFloat = 2.0, color: UIColor = .black) {
         self.layer.shadowColor = color.cgColor
         self.layer.shadowOffset = CGSize(width: offSet, height: offSet)
-        self.layer.shadowOpacity = 1
+        self.layer.shadowOpacity = 0.5
         self.layer.shouldRasterize = false
         self.layer.masksToBounds = false
     }
@@ -361,6 +361,14 @@ extension UIView {
         self.layer.shadowPath = shadowPath.cgPath
         self.layer.shadowRadius = 5
     }
+    
+    func addTopShadow(shadowColor : UIColor, offset: CGFloat = 2.0){
+            self.layer.shadowColor = shadowColor.cgColor
+            self.layer.shadowOffset = CGSize(width: offset, height: offset)
+        self.layer.shadowOpacity = 1
+            self.layer.shadowRadius = 5
+            self.clipsToBounds = false
+        }
     
     func convertToImage() -> UIImage {
         UIGraphicsBeginImageContextWithOptions(self.bounds.size, self.isOpaque, 0.0)

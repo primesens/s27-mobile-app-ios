@@ -9,6 +9,7 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import AVKit
 
 enum HomeCollectionViews {
     case HappeningNow, Speakers, Sponsors
@@ -68,6 +69,13 @@ class HomeVC: UIViewController {
         vm.getSponsors()
         vm.getAttendies()
         configUI()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
+            self?.updateByContentOffset()
+            self?.startLoading()
+        }
+        
+        self.featuredAttendiesCollectionView.reloadData()
     }
     
     func configUI() {
@@ -85,13 +93,26 @@ class HomeVC: UIViewController {
         let height: CGFloat = 80 //whatever height you want to add to the existing height
         let bounds = self.navigationController!.navigationBar.bounds
         self.navigationController?.navigationBar.frame = CGRect(x: 0, y: 0, width: bounds.width, height: bounds.height + height)
+        
+        self.featuredAttendiesCollectionView.safeAdd(observer: self, forKeyPath: "contentOffset", options: [.new], context: nil)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        self.stopIt(isStart: true)
+        self.featuredAttendiesCollectionView.safeRemove(observer: self, forKeyPath: "contentOffset")
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        
+        self.stopIt(isStart: true)
     }
     
+    private func stopIt(isStart:Bool) {
+        guard let player = ModelObject.shared.videoPlayer else { return }
+        player.isStopPlayer = isStart
+    }
     // MARK: - Outlet Action
     
     @IBAction func didTapOnNotification(_ sender: UIButton) {
@@ -121,7 +142,8 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
         if (collectionView == happeningNowCollectionView) {
             return vm.arrHappeningNow.count
         } else if (collectionView == featuredAttendiesCollectionView) {
-            return vm.arrAttendies.count
+//            return vm.arrAttendies.count
+            return ModelObject.shared.demoData.count
         } else if (collectionView == speakersCollectionView) {
             return vm.arrSpeakers.count
         } else if (collectionView == sponsorsCollectionView) {
@@ -137,8 +159,13 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
             cell.configCell(model: vm.arrHappeningNow[indexPath.row])
             return cell
         } else if (collectionView == featuredAttendiesCollectionView) {
+//            let cell: AttendiesCVC = featuredAttendiesCollectionView.dequeueReusableCell(withReuseIdentifier: "AttendiesCVC", for: indexPath) as! AttendiesCVC
+//            cell.configCell(model: vm.arrAttendies[indexPath.row])
+//            return cell
+            
             let cell: AttendiesCVC = featuredAttendiesCollectionView.dequeueReusableCell(withReuseIdentifier: "AttendiesCVC", for: indexPath) as! AttendiesCVC
-            cell.configCell(model: vm.arrAttendies[indexPath.row])
+            let image = ModelObject.shared.demoData[indexPath.row].image
+            cell.playerimageView.dowloadFromServer(link: image ?? "")
             return cell
         } else if (collectionView == speakersCollectionView) {
             let cell: SpeakersCVC = speakersCollectionView.dequeueReusableCell(withReuseIdentifier: "SpeakersCVC", for: indexPath) as! SpeakersCVC
@@ -164,6 +191,76 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
             
         }
     }
+}
+
+extension HomeVC {
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        //This logic means that user is staying on the timeline screen only.
+        if keyPath == "contentOffset" {
+            self.startVideoForCell()
+        } else {
+            super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
+        }
+    }
+    
+    func startVideoForCell() {
+        self.updateByContentOffset()
+        NSObject.cancelPreviousPerformRequests(withTarget: self)
+        self.perform(#selector(startLoading), with: nil, afterDelay: 0.3)
+    }
+    
+    func updateByContentOffset() {
+        
+        let p = CGPoint(x: self.featuredAttendiesCollectionView!.frame.width/2, y: self.featuredAttendiesCollectionView!.contentOffset.y + self.featuredAttendiesCollectionView!.frame.width/2)
+        
+        if let path = self.featuredAttendiesCollectionView!.indexPathForItem(at: p),
+            self.presentedViewController == nil {
+            self.updateCell(at: path)
+        }
+    }
+    
+    func updateCell(at indexPath: IndexPath) {
+        
+        if let cell = self.featuredAttendiesCollectionView.cellForItem(at: indexPath) as? AttendiesCVC {
+            // this thumb use when transition start and your video dosent start
+            let postModel = ModelObject.shared.demoData[indexPath.row]
+            ModelObject.shared.videoPlayer?.playView = cell.playerimageView
+            ModelObject.shared.videoPlayer?.thumbImageView.contentMode = cell.playerimageView.contentMode
+            //This means it contains video and text is not compulsory.
+            if postModel.videoType == 1 {
+                
+                if let videoURL = URL(string: postModel.url ?? "") {
+                    ModelObject.shared.videoPlayer?.isStopPlayer = false
+                    ModelObject.shared.videoPlayer?.set(url: videoURL, state: { (status) in
+                        switch status {
+                        case .playing: break
+                        case .failed(err: _): break
+                        default: break
+                        }
+                    })
+                }
+            } else {
+                self.destroyMMPlayerInstance()
+            }
+        }
+    }
+    
+    func destroyMMPlayerInstance() {
+        
+        if let xpPlayer = ModelObject.shared.videoPlayer, xpPlayer.playView != nil {
+            xpPlayer.isStopPlayer = true
+            xpPlayer.playView = nil
+        }
+    }
+    
+    @objc func startLoading() {
+        if self.presentedViewController != nil {
+            return
+        }
+        // start loading video
+        ModelObject.shared.videoPlayer?.startLoading()
+    }
+    
 }
 
 // MARK: - CollectionView Flowlayout

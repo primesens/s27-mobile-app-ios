@@ -56,8 +56,8 @@ class CreateNewMeetingVC: UIViewController {
         btnInviteAttende.addCornerRadius(radius: 4)
         btnRegister.addCornerRadius(radius: 4)
         topView.addBottomShadow()
-        bottomView.addViewShadow(offSet: 0.5, color: .lightGray)
-        
+        bottomView.addViewShadow(offSet: -5, color: .lightGray)
+//        bottomView.addTopShadow(shadowColor: .lightGray, offset: -5)
         topicTF.textFieldBoarderOne()
         descriptionTF.textFieldBoarderOne()
         areaOfInterestTF.textFieldBoarderOne()

@@ -32,7 +32,7 @@ class LiveChatVC: UIViewController {
         btnsView.addBottomShadow()
         viewBtnSend.addCornerRadius(radius: 6)
         btnClose.addCornerRadius(radius: 6)
-        bottomView.addViewShadow(offSet: 1, color: .lightGray)
+        bottomView.addViewShadow(offSet: -5, color: .lightGray)
     }
     
     @IBAction func didTapOnclose(_ sender: UIButton) {
